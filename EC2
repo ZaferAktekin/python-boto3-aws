@@ -19,7 +19,7 @@ zinstances = ec2_resource.create_instances(
         {
             'DeviceName': '/dev/sdf',
             'Ebs': {
-                'VolumeSize': 20,
+                'VolumeSize': 10,
                 'VolumeType': 'gp2',
                 'DeleteOnTermination': False
             }
