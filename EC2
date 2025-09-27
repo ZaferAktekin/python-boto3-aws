@@ -15,3 +15,29 @@ zinstances = ec2_resource.create_instances(
     InstanceType = 't2.micro',  # Specifying Instance Type
     KeyName = '',   # Specifying the Key Pair
     SecurityGroupIds = [""],        #  Add your actual SG ID here
+    BlockDeviceMappings = [         # Adding extra EBS Volume
+        {
+            'DeviceName': '/dev/sdf',
+            'Ebs': {
+                'VolumeSize': 20,
+                'VolumeType': 'gp2',
+                'DeleteOnTermination': False
+            }
+        }
+    ],
+    TagSpecifications = [       # Specifying Tags to easily identify resources
+        {
+            'ResourceType': 'instance',
+            'Tags': [
+                {
+                    'Key': 'Name',
+                    'Value': 'boto3-EC2',
+                },
+                {
+                    'Key': 'Env',
+                    'Value': 'Test',
+                }
+            ]
+            
+        }
+    ],
