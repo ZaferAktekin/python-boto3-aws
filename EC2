@@ -5,3 +5,13 @@ import boto3
 # Step 1 Create an EC2 Resource
 
 ec2_resource = boto3.resource('ec2', region_name= 'us-east-1')
+
+# Step 2 Launch an EC2 Instance
+
+zinstances = ec2_resource.create_instances(
+    ImageId = '',      # Specify Image ID
+    MinCount = 1,       # Setting the minimum instance launched
+    MaxCount = 1,       # Setting the maximum instance launched
+    InstanceType = 't2.micro',  # Specifying Instance Type
+    KeyName = '',   # Specifying the Key Pair
+    SecurityGroupIds = [""],        #  Add your actual SG ID here
