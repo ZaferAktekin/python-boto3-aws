@@ -41,6 +41,10 @@ zinstances = ec2_resource.create_instances(
             
         }
     ],
+
+    # Adding a User data to launch a Apache website
+    UserData =
+
 )
 
 print("My instance has been created successfully")
