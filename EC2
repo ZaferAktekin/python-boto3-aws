@@ -41,3 +41,6 @@ zinstances = ec2_resource.create_instances(
             
         }
     ],
+)
+
+print("My instance has been created successfully")
